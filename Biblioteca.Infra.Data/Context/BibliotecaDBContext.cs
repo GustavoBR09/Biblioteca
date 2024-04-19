@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Biblioteca.Dominio.Entidades
+namespace Biblioteca.Infra.Data.Context
 {
-    public class Cliente : Pessoa
+    public class BibliotecaDBContext
     {
-        public string CPF { get; set; }
     }
 }

@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.Dominio.Entidades
 {
-    internal class Funcionario
+    public class Funcionario : Pessoa 
     {
+        public string CarteiraTrabalho { get; set; }
+        public string NomeUsuario { get; set; }
+        public string Senha { get; set; }
     }
 }

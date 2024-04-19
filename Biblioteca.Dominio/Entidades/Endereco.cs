@@ -8,7 +8,7 @@ namespace Biblioteca.Dominio.Entidades
 {
     public class Endereco
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Rua { get; set; }
         public string Complemento { get; set; }
         public string Numero { get; set; }

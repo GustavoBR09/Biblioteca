@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Biblioteca.Dominio.Entidades
+namespace Biblioteca.Infra.Data.UoW
 {
-    public class Cliente : Pessoa
+    internal class UnitOfWork
     {
-        public string CPF { get; set; }
     }
 }
