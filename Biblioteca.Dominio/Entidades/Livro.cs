@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.Dominio.Entidades
 {
-    public class Livro
+    public class Livro : Entidade
     {
         public int Id { get; set; }
         public string Titulo { get; set; }

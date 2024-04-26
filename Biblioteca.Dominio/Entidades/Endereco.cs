@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.Dominio.Entidades
 {
-    public class Endereco
+    public class Endereco : Entidade
     {
-        public int Id { get; set; }
         public string Rua { get; set; }
         public string Complemento { get; set; }
         public string Numero { get; set; }

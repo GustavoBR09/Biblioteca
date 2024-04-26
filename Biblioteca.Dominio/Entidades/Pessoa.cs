@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.Dominio.Entidades
 {
-    public abstract class Pessoa
+    public abstract class Pessoa : Entidade
     {
-        public int Id { get; set; }
         public string Nome { get; set; }
         public int EnderecoID { get; set; }
         public string Email { get; set; }

@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.Dominio.Entidades
 {
-    public class Emprestimo
+    public class Emprestimo : Entidade
     { 
-        public int ID { get; set; }
         public int LivroID { get; set; }
         public int ClienteID { get; set; }
         public int FuncionarioID { get; set; }

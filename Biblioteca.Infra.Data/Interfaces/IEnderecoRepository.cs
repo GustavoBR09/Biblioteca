@@ -11,7 +11,7 @@ namespace Biblioteca.Infra.Data.Interfaces
     public interface IEnderecoRepository
     {
         Endereco GetEndereco(int id);
-        IEnumerable<Endereco> BuscaEndereco(Expression<Func<Endereco>> filtro);
+        IEnumerable<Endereco> BuscaEndereco(Expression<Func<Endereco, bool>> filtro);
         Endereco Add(Endereco endereco);
         Endereco Editar(Endereco endereco);
         void Delete(int id);
