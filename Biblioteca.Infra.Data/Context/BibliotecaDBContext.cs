@@ -11,7 +11,6 @@ namespace Biblioteca.Infra.Data.Context
     {
         public BibliotecaDBContext(DbContextOptions<BibliotecaDBContext> options) : base(options)
         {
-            
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

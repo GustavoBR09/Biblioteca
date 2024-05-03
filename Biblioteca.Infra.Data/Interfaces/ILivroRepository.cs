@@ -11,7 +11,7 @@ namespace Biblioteca.Infra.Data.Interfaces
     public interface ILivroRepository
     {
         Livro GetLivro(int id);
-        IEnumerable<Livro> BuscaLivro(Expression<Func<Livro>> filtro);
+        IEnumerable<Livro> BuscaLivro(Expression<Func<Livro, bool>> filtro);
         Livro Add(Livro livro);
         Livro Editar(Livro livro);
         void Delete(int id);

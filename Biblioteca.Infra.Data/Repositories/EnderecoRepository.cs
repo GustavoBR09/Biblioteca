@@ -24,8 +24,8 @@ namespace Biblioteca.Infra.Data.Repositories
 
         public IEnumerable<Endereco> BuscaEndereco(Expression<Func<Endereco, bool>> filtro)
         {
-            var context = DbSet.AsQueryable();
-            var enderecos = context.Where(filtro);
+            IQueryable<Endereco> context = DbSet.AsQueryable();
+            IQueryable<Endereco> enderecos = context.Where(filtro);
             return enderecos;
         }
 

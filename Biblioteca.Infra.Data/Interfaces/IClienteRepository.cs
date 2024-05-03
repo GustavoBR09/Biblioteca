@@ -11,7 +11,7 @@ namespace Biblioteca.Infra.Data.Interfaces
     public interface IClienteRepository
     {
         Cliente GetClienteById(int id);
-        IEnumerable<Cliente> BuscaCliente(Expression<Func<Cliente>> filtro);
+        IEnumerable<Cliente> BuscaCliente(Expression<Func<Cliente, bool>> filtro);
         Cliente Add(Cliente cliente);
         Cliente Editar(Cliente cliente);
         void Delete(int id);

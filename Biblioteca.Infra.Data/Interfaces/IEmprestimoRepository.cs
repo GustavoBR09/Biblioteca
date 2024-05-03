@@ -11,7 +11,7 @@ namespace Biblioteca.Infra.Data.Interfaces
     public interface IEmprestimoRepository
     {
         Emprestimo GetEmprestimoByID(int id);
-        IEnumerable<Emprestimo> BuscaEmprestimo(Expression<Func<Emprestimo>> filtro);
+        IEnumerable<Emprestimo> BuscaEmprestimo(Expression<Func<Emprestimo, bool>> filtro);
         Emprestimo Add(Emprestimo emprestimo);
         Emprestimo Editar(Emprestimo emprestimo);
         void Delete(int id);

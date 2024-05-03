@@ -11,7 +11,7 @@ namespace Biblioteca.Infra.Data.Interfaces
     public interface IFuncionarioRepository
     {
         Funcionario GetFuncionarioById(int id);
-        IEnumerable<Funcionario> BuscaFuncionario(Expression<Func<Funcionario>> filtro);
+        IEnumerable<Funcionario> BuscaFuncionario(Expression<Func<Funcionario, bool>> filtro);
         Funcionario Add(Funcionario funcionario);
         Funcionario Editar(Funcionario funcionario);
         void Delete(int id);
