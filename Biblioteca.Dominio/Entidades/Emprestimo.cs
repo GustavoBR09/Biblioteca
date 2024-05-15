@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Biblioteca.Dominio.Entidades
+﻿namespace Biblioteca.Dominio.Entidades
 {
     public class Emprestimo : Entidade
     { 
@@ -13,7 +7,7 @@ namespace Biblioteca.Dominio.Entidades
         public int FuncionarioID { get; set; }
         public DateTime DataEmprestimo { get; set; }
         public DateTime DataDevolucaoPrevista { get; set; }
-        public DateTime DataDevolucaoReal {  get; set; }
+        public DateTime? DataDevolucaoReal {  get; set; }
         public decimal Multa { get; set; }
     }
 }

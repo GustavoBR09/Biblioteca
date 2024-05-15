@@ -1,9 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Biblioteca.Infra.Data.Mapping;
+using Microsoft.EntityFrameworkCore;
 
 namespace Biblioteca.Infra.Data.Context
 {
@@ -14,6 +10,11 @@ namespace Biblioteca.Infra.Data.Context
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new ClienteMapping());
+            modelBuilder.ApplyConfiguration(new EnderecoMapping());
+            modelBuilder.ApplyConfiguration(new EmprestimoMapping());
+            modelBuilder.ApplyConfiguration(new LivroMapping());
+            modelBuilder.ApplyConfiguration(new FuncionarioMapping());
             base.OnModelCreating(modelBuilder);
         }
     }
