@@ -35,23 +35,23 @@
             labelEmail = new Label();
             labelCPF = new Label();
             panel1 = new Panel();
-            button1 = new Button();
-            comboBoxEstado = new ComboBox();
-            labelComplemento = new Label();
-            labelNumero = new Label();
-            labelEstado = new Label();
-            labelBairro = new Label();
-            labelCidade = new Label();
-            labelRua = new Label();
+            buttonCadastrarNovo = new Button();
             textBoxComplemento = new TextBox();
-            textBoxBairro = new TextBox();
-            textBoxNumero = new TextBox();
-            textBoxCidade = new TextBox();
-            textBoxRua = new TextBox();
-            labelEndereco = new Label();
+            comboBoxEstado = new ComboBox();
             buttonCadastrar = new Button();
+            labelComplemento = new Label();
+            labelEndereco = new Label();
+            labelNumero = new Label();
+            textBoxRua = new TextBox();
+            labelEstado = new Label();
+            textBoxCidade = new TextBox();
+            labelBairro = new Label();
+            textBoxNumero = new TextBox();
+            labelCidade = new Label();
+            textBoxBairro = new TextBox();
+            labelRua = new Label();
             labelCadastro = new Label();
-            maskedTextBox1 = new MaskedTextBox();
+            maskedTextBoxTelefone = new MaskedTextBox();
             labelTelefone = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -81,7 +81,7 @@
             // labelNome
             // 
             labelNome.AutoSize = true;
-            labelNome.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelNome.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             labelNome.ForeColor = SystemColors.ControlText;
             labelNome.Location = new Point(43, 87);
             labelNome.Name = "labelNome";
@@ -92,7 +92,7 @@
             // labelEmail
             // 
             labelEmail.AutoSize = true;
-            labelEmail.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelEmail.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             labelEmail.Location = new Point(40, 176);
             labelEmail.Name = "labelEmail";
             labelEmail.Size = new Size(106, 20);
@@ -102,7 +102,7 @@
             // labelCPF
             // 
             labelCPF.AutoSize = true;
-            labelCPF.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelCPF.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             labelCPF.Location = new Point(40, 355);
             labelCPF.Name = "labelCPF";
             labelCPF.Size = new Size(91, 20);
@@ -112,7 +112,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Gray;
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(buttonCadastrarNovo);
             panel1.Controls.Add(textBoxComplemento);
             panel1.Controls.Add(comboBoxEstado);
             panel1.Controls.Add(buttonCadastrar);
@@ -132,14 +132,22 @@
             panel1.Size = new Size(416, 460);
             panel1.TabIndex = 6;
             // 
-            // button1
+            // buttonCadastrarNovo
             // 
-            button1.Location = new Point(176, 402);
-            button1.Name = "button1";
-            button1.Size = new Size(222, 27);
-            button1.TabIndex = 37;
-            button1.Text = "Enviar e cadastrar novo cliente";
-            button1.UseVisualStyleBackColor = true;
+            buttonCadastrarNovo.Location = new Point(176, 402);
+            buttonCadastrarNovo.Name = "buttonCadastrarNovo";
+            buttonCadastrarNovo.Size = new Size(222, 27);
+            buttonCadastrarNovo.TabIndex = 37;
+            buttonCadastrarNovo.Text = "Enviar e cadastrar novo cliente";
+            buttonCadastrarNovo.UseVisualStyleBackColor = true;
+            buttonCadastrarNovo.Click += buttonCadastrarNovo_Click;
+            // 
+            // textBoxComplemento
+            // 
+            textBoxComplemento.Location = new Point(225, 116);
+            textBoxComplemento.Name = "textBoxComplemento";
+            textBoxComplemento.Size = new Size(157, 27);
+            textBoxComplemento.TabIndex = 29;
             // 
             // comboBoxEstado
             // 
@@ -150,118 +158,6 @@
             comboBoxEstado.Size = new Size(157, 28);
             comboBoxEstado.TabIndex = 36;
             // 
-            // labelComplemento
-            // 
-            labelComplemento.AutoSize = true;
-            labelComplemento.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            labelComplemento.ForeColor = SystemColors.ControlText;
-            labelComplemento.Location = new Point(225, 88);
-            labelComplemento.Name = "labelComplemento";
-            labelComplemento.Size = new Size(109, 20);
-            labelComplemento.TabIndex = 35;
-            labelComplemento.Text = "Complemento:";
-            // 
-            // labelNumero
-            // 
-            labelNumero.AutoSize = true;
-            labelNumero.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            labelNumero.ForeColor = SystemColors.ControlText;
-            labelNumero.Location = new Point(33, 198);
-            labelNumero.Name = "labelNumero";
-            labelNumero.Size = new Size(70, 20);
-            labelNumero.TabIndex = 34;
-            labelNumero.Text = "Número:";
-            // 
-            // labelEstado
-            // 
-            labelEstado.AutoSize = true;
-            labelEstado.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            labelEstado.ForeColor = SystemColors.ControlText;
-            labelEstado.Location = new Point(225, 319);
-            labelEstado.Name = "labelEstado";
-            labelEstado.Size = new Size(58, 20);
-            labelEstado.TabIndex = 33;
-            labelEstado.Text = "Estado:";
-            // 
-            // labelBairro
-            // 
-            labelBairro.AutoSize = true;
-            labelBairro.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            labelBairro.ForeColor = SystemColors.ControlText;
-            labelBairro.Location = new Point(225, 198);
-            labelBairro.Name = "labelBairro";
-            labelBairro.Size = new Size(55, 20);
-            labelBairro.TabIndex = 32;
-            labelBairro.Text = "Bairro:";
-            // 
-            // labelCidade
-            // 
-            labelCidade.AutoSize = true;
-            labelCidade.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            labelCidade.ForeColor = SystemColors.ControlText;
-            labelCidade.Location = new Point(33, 319);
-            labelCidade.Name = "labelCidade";
-            labelCidade.Size = new Size(60, 20);
-            labelCidade.TabIndex = 31;
-            labelCidade.Text = "Cidade:";
-            // 
-            // labelRua
-            // 
-            labelRua.AutoSize = true;
-            labelRua.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            labelRua.ForeColor = SystemColors.ControlText;
-            labelRua.Location = new Point(33, 88);
-            labelRua.Name = "labelRua";
-            labelRua.Size = new Size(39, 20);
-            labelRua.TabIndex = 30;
-            labelRua.Text = "Rua:";
-            // 
-            // textBoxComplemento
-            // 
-            textBoxComplemento.Location = new Point(225, 116);
-            textBoxComplemento.Name = "textBoxComplemento";
-            textBoxComplemento.Size = new Size(157, 27);
-            textBoxComplemento.TabIndex = 29;
-            // 
-            // textBoxBairro
-            // 
-            textBoxBairro.Location = new Point(225, 230);
-            textBoxBairro.Name = "textBoxBairro";
-            textBoxBairro.Size = new Size(157, 27);
-            textBoxBairro.TabIndex = 28;
-            // 
-            // textBoxNumero
-            // 
-            textBoxNumero.Location = new Point(33, 230);
-            textBoxNumero.Name = "textBoxNumero";
-            textBoxNumero.Size = new Size(157, 27);
-            textBoxNumero.TabIndex = 27;
-            // 
-            // textBoxCidade
-            // 
-            textBoxCidade.Location = new Point(33, 350);
-            textBoxCidade.Name = "textBoxCidade";
-            textBoxCidade.Size = new Size(157, 27);
-            textBoxCidade.TabIndex = 26;
-            // 
-            // textBoxRua
-            // 
-            textBoxRua.Location = new Point(33, 116);
-            textBoxRua.Name = "textBoxRua";
-            textBoxRua.Size = new Size(157, 27);
-            textBoxRua.TabIndex = 25;
-            // 
-            // labelEndereco
-            // 
-            labelEndereco.AutoSize = true;
-            labelEndereco.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            labelEndereco.ForeColor = SystemColors.ControlText;
-            labelEndereco.Location = new Point(134, 50);
-            labelEndereco.Name = "labelEndereco";
-            labelEndereco.Size = new Size(132, 20);
-            labelEndereco.TabIndex = 24;
-            labelEndereco.Text = "Digite o Endereço";
-            // 
             // buttonCadastrar
             // 
             buttonCadastrar.Location = new Point(25, 402);
@@ -270,11 +166,117 @@
             buttonCadastrar.TabIndex = 23;
             buttonCadastrar.Text = "Cadastrar";
             buttonCadastrar.UseVisualStyleBackColor = true;
+            buttonCadastrar.Click += buttonCadastrar_Click;
+            // 
+            // labelComplemento
+            // 
+            labelComplemento.AutoSize = true;
+            labelComplemento.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            labelComplemento.ForeColor = SystemColors.ControlText;
+            labelComplemento.Location = new Point(225, 88);
+            labelComplemento.Name = "labelComplemento";
+            labelComplemento.Size = new Size(109, 20);
+            labelComplemento.TabIndex = 35;
+            labelComplemento.Text = "Complemento:";
+            // 
+            // labelEndereco
+            // 
+            labelEndereco.AutoSize = true;
+            labelEndereco.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelEndereco.ForeColor = SystemColors.ControlText;
+            labelEndereco.Location = new Point(134, 50);
+            labelEndereco.Name = "labelEndereco";
+            labelEndereco.Size = new Size(132, 20);
+            labelEndereco.TabIndex = 24;
+            labelEndereco.Text = "Digite o Endereço";
+            // 
+            // labelNumero
+            // 
+            labelNumero.AutoSize = true;
+            labelNumero.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            labelNumero.ForeColor = SystemColors.ControlText;
+            labelNumero.Location = new Point(33, 203);
+            labelNumero.Name = "labelNumero";
+            labelNumero.Size = new Size(70, 20);
+            labelNumero.TabIndex = 34;
+            labelNumero.Text = "Número:";
+            // 
+            // textBoxRua
+            // 
+            textBoxRua.Location = new Point(33, 116);
+            textBoxRua.Name = "textBoxRua";
+            textBoxRua.Size = new Size(157, 27);
+            textBoxRua.TabIndex = 25;
+            // 
+            // labelEstado
+            // 
+            labelEstado.AutoSize = true;
+            labelEstado.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            labelEstado.ForeColor = SystemColors.ControlText;
+            labelEstado.Location = new Point(225, 319);
+            labelEstado.Name = "labelEstado";
+            labelEstado.Size = new Size(58, 20);
+            labelEstado.TabIndex = 33;
+            labelEstado.Text = "Estado:";
+            // 
+            // textBoxCidade
+            // 
+            textBoxCidade.Location = new Point(33, 350);
+            textBoxCidade.Name = "textBoxCidade";
+            textBoxCidade.Size = new Size(157, 27);
+            textBoxCidade.TabIndex = 26;
+            // 
+            // labelBairro
+            // 
+            labelBairro.AutoSize = true;
+            labelBairro.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            labelBairro.ForeColor = SystemColors.ControlText;
+            labelBairro.Location = new Point(225, 203);
+            labelBairro.Name = "labelBairro";
+            labelBairro.Size = new Size(55, 20);
+            labelBairro.TabIndex = 32;
+            labelBairro.Text = "Bairro:";
+            // 
+            // textBoxNumero
+            // 
+            textBoxNumero.Location = new Point(33, 235);
+            textBoxNumero.Name = "textBoxNumero";
+            textBoxNumero.Size = new Size(157, 27);
+            textBoxNumero.TabIndex = 27;
+            // 
+            // labelCidade
+            // 
+            labelCidade.AutoSize = true;
+            labelCidade.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            labelCidade.ForeColor = SystemColors.ControlText;
+            labelCidade.Location = new Point(33, 319);
+            labelCidade.Name = "labelCidade";
+            labelCidade.Size = new Size(60, 20);
+            labelCidade.TabIndex = 31;
+            labelCidade.Text = "Cidade:";
+            // 
+            // textBoxBairro
+            // 
+            textBoxBairro.Location = new Point(225, 235);
+            textBoxBairro.Name = "textBoxBairro";
+            textBoxBairro.Size = new Size(157, 27);
+            textBoxBairro.TabIndex = 28;
+            // 
+            // labelRua
+            // 
+            labelRua.AutoSize = true;
+            labelRua.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            labelRua.ForeColor = SystemColors.ControlText;
+            labelRua.Location = new Point(33, 88);
+            labelRua.Name = "labelRua";
+            labelRua.Size = new Size(39, 20);
+            labelRua.TabIndex = 30;
+            labelRua.Text = "Rua:";
             // 
             // labelCadastro
             // 
             labelCadastro.AutoSize = true;
-            labelCadastro.Font = new Font("Segoe UI", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            labelCadastro.Font = new Font("Segoe UI", 18F, FontStyle.Bold | FontStyle.Italic);
             labelCadastro.ForeColor = SystemColors.ControlText;
             labelCadastro.Location = new Point(43, 27);
             labelCadastro.Name = "labelCadastro";
@@ -282,18 +284,18 @@
             labelCadastro.TabIndex = 7;
             labelCadastro.Text = "Cadastro do usuário";
             // 
-            // maskedTextBox1
+            // maskedTextBoxTelefone
             // 
-            maskedTextBox1.Location = new Point(40, 299);
-            maskedTextBox1.Mask = "000.000.000-00";
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(296, 27);
-            maskedTextBox1.TabIndex = 8;
+            maskedTextBoxTelefone.Location = new Point(40, 299);
+            maskedTextBoxTelefone.Mask = "(99) 0000-0000";
+            maskedTextBoxTelefone.Name = "maskedTextBoxTelefone";
+            maskedTextBoxTelefone.Size = new Size(296, 27);
+            maskedTextBoxTelefone.TabIndex = 8;
             // 
             // labelTelefone
             // 
             labelTelefone.AutoSize = true;
-            labelTelefone.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelTelefone.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             labelTelefone.Location = new Point(40, 265);
             labelTelefone.Name = "labelTelefone";
             labelTelefone.Size = new Size(126, 20);
@@ -308,7 +310,7 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(labelTelefone);
-            Controls.Add(maskedTextBox1);
+            Controls.Add(maskedTextBoxTelefone);
             Controls.Add(labelCadastro);
             Controls.Add(panel1);
             Controls.Add(labelCPF);
@@ -335,7 +337,7 @@
         private Label labelEmail;
         private Label labelCPF;
         private Panel panel1;
-        private Button button1;
+        private Button buttonCadastrarNovo;
         private TextBox textBoxComplemento;
         private ComboBox comboBoxEstado;
         private Button buttonCadastrar;
@@ -351,7 +353,7 @@
         private TextBox textBoxBairro;
         private Label labelRua;
         private Label labelCadastro;
-        private MaskedTextBox maskedTextBox1;
+        private MaskedTextBox maskedTextBoxTelefone;
         private Label labelTelefone;
     }
 }

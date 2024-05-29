@@ -35,8 +35,10 @@
             textBoxNome = new TextBox();
             textBoxCarteiraTrabalho = new TextBox();
             labelTelefone = new Label();
-            textBox1 = new TextBox();
+            textBoxTelefone = new TextBox();
             panel1 = new Panel();
+            buttonCadastrar = new Button();
+            button1 = new Button();
             labelInformacao = new Label();
             labelCadastro = new Label();
             labelFuncionario = new Label();
@@ -57,15 +59,13 @@
             labelCidade = new Label();
             textBoxBairro = new TextBox();
             labelRua = new Label();
-            button1 = new Button();
-            buttonCadastrar = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // labelCPF
             // 
             labelCPF.AutoSize = true;
-            labelCPF.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelCPF.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             labelCPF.ForeColor = SystemColors.ControlText;
             labelCPF.Location = new Point(9, 334);
             labelCPF.Name = "labelCPF";
@@ -76,7 +76,7 @@
             // labelEmail
             // 
             labelEmail.AutoSize = true;
-            labelEmail.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelEmail.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             labelEmail.ForeColor = SystemColors.ControlText;
             labelEmail.Location = new Point(12, 171);
             labelEmail.Name = "labelEmail";
@@ -87,7 +87,7 @@
             // labelNome
             // 
             labelNome.AutoSize = true;
-            labelNome.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelNome.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             labelNome.ForeColor = SystemColors.ControlText;
             labelNome.Location = new Point(12, 94);
             labelNome.Name = "labelNome";
@@ -119,7 +119,7 @@
             // labelTelefone
             // 
             labelTelefone.AutoSize = true;
-            labelTelefone.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelTelefone.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             labelTelefone.ForeColor = SystemColors.ControlText;
             labelTelefone.Location = new Point(9, 254);
             labelTelefone.Name = "labelTelefone";
@@ -127,12 +127,12 @@
             labelTelefone.TabIndex = 17;
             labelTelefone.Text = "Digite o telefone:";
             // 
-            // textBox1
+            // textBoxTelefone
             // 
-            textBox1.Location = new Point(9, 286);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(235, 27);
-            textBox1.TabIndex = 16;
+            textBoxTelefone.Location = new Point(9, 286);
+            textBoxTelefone.Name = "textBoxTelefone";
+            textBoxTelefone.Size = new Size(235, 27);
+            textBoxTelefone.TabIndex = 16;
             // 
             // panel1
             // 
@@ -145,10 +145,32 @@
             panel1.Size = new Size(281, 451);
             panel1.TabIndex = 18;
             // 
+            // buttonCadastrar
+            // 
+            buttonCadastrar.ForeColor = SystemColors.ActiveCaptionText;
+            buttonCadastrar.Location = new Point(77, 360);
+            buttonCadastrar.Name = "buttonCadastrar";
+            buttonCadastrar.Size = new Size(121, 27);
+            buttonCadastrar.TabIndex = 50;
+            buttonCadastrar.Text = "Cadastrar";
+            buttonCadastrar.UseVisualStyleBackColor = true;
+            buttonCadastrar.Click += buttonCadastrar_Click;
+            // 
+            // button1
+            // 
+            button1.ForeColor = SystemColors.ActiveCaptionText;
+            button1.Location = new Point(17, 399);
+            button1.Name = "button1";
+            button1.Size = new Size(251, 27);
+            button1.TabIndex = 51;
+            button1.Text = "Enviar e cadastrar novo funcionário";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // labelInformacao
             // 
             labelInformacao.AutoSize = true;
-            labelInformacao.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelInformacao.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             labelInformacao.ForeColor = SystemColors.ControlText;
             labelInformacao.Location = new Point(52, 116);
             labelInformacao.Name = "labelInformacao";
@@ -159,7 +181,7 @@
             // labelCadastro
             // 
             labelCadastro.AutoSize = true;
-            labelCadastro.Font = new Font("Segoe UI", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            labelCadastro.Font = new Font("Segoe UI", 18F, FontStyle.Bold | FontStyle.Italic);
             labelCadastro.ForeColor = SystemColors.ControlText;
             labelCadastro.Location = new Point(9, 9);
             labelCadastro.Name = "labelCadastro";
@@ -170,7 +192,7 @@
             // labelFuncionario
             // 
             labelFuncionario.AutoSize = true;
-            labelFuncionario.Font = new Font("Segoe UI", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            labelFuncionario.Font = new Font("Segoe UI", 18F, FontStyle.Bold | FontStyle.Italic);
             labelFuncionario.ForeColor = SystemColors.ControlText;
             labelFuncionario.Location = new Point(9, 50);
             labelFuncionario.Name = "labelFuncionario";
@@ -182,7 +204,7 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Gray;
-            label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             label1.ForeColor = SystemColors.ControlText;
             label1.Location = new Point(284, 234);
             label1.Name = "label1";
@@ -194,7 +216,7 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Gray;
-            label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             label2.ForeColor = SystemColors.ControlText;
             label2.Location = new Point(284, 157);
             label2.Name = "label2";
@@ -235,7 +257,7 @@
             // labelComplemento
             // 
             labelComplemento.AutoSize = true;
-            labelComplemento.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelComplemento.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             labelComplemento.ForeColor = SystemColors.ControlText;
             labelComplemento.Location = new Point(556, 157);
             labelComplemento.Name = "labelComplemento";
@@ -246,7 +268,7 @@
             // labelEndereco
             // 
             labelEndereco.AutoSize = true;
-            labelEndereco.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelEndereco.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             labelEndereco.ForeColor = SystemColors.ControlText;
             labelEndereco.Location = new Point(598, 50);
             labelEndereco.Name = "labelEndereco";
@@ -257,7 +279,7 @@
             // labelNumero
             // 
             labelNumero.AutoSize = true;
-            labelNumero.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelNumero.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             labelNumero.ForeColor = SystemColors.ControlText;
             labelNumero.Location = new Point(556, 367);
             labelNumero.Name = "labelNumero";
@@ -275,7 +297,7 @@
             // labelEstado
             // 
             labelEstado.AutoSize = true;
-            labelEstado.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelEstado.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             labelEstado.ForeColor = SystemColors.ControlText;
             labelEstado.Location = new Point(686, 367);
             labelEstado.Name = "labelEstado";
@@ -293,7 +315,7 @@
             // labelBairro
             // 
             labelBairro.AutoSize = true;
-            labelBairro.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelBairro.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             labelBairro.ForeColor = SystemColors.ControlText;
             labelBairro.Location = new Point(561, 234);
             labelBairro.Name = "labelBairro";
@@ -311,7 +333,7 @@
             // labelCidade
             // 
             labelCidade.AutoSize = true;
-            labelCidade.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelCidade.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             labelCidade.ForeColor = SystemColors.ControlText;
             labelCidade.Location = new Point(556, 305);
             labelCidade.Name = "labelCidade";
@@ -329,33 +351,13 @@
             // labelRua
             // 
             labelRua.AutoSize = true;
-            labelRua.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelRua.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             labelRua.ForeColor = SystemColors.ControlText;
             labelRua.Location = new Point(556, 88);
             labelRua.Name = "labelRua";
             labelRua.Size = new Size(39, 20);
             labelRua.TabIndex = 43;
             labelRua.Text = "Rua:";
-            // 
-            // button1
-            // 
-            button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(17, 399);
-            button1.Name = "button1";
-            button1.Size = new Size(251, 27);
-            button1.TabIndex = 51;
-            button1.Text = "Enviar e cadastrar novo funcionário";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // buttonCadastrar
-            // 
-            buttonCadastrar.ForeColor = SystemColors.ActiveCaptionText;
-            buttonCadastrar.Location = new Point(77, 360);
-            buttonCadastrar.Name = "buttonCadastrar";
-            buttonCadastrar.Size = new Size(121, 27);
-            buttonCadastrar.TabIndex = 50;
-            buttonCadastrar.Text = "Cadastrar";
-            buttonCadastrar.UseVisualStyleBackColor = true;
             // 
             // FormCadastroFuncionarios
             // 
@@ -384,7 +386,7 @@
             Controls.Add(labelCadastro);
             Controls.Add(panel1);
             Controls.Add(labelTelefone);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxTelefone);
             Controls.Add(textBoxCarteiraTrabalho);
             Controls.Add(labelCPF);
             Controls.Add(labelEmail);
@@ -408,7 +410,7 @@
         private TextBox textBoxNome;
         private TextBox textBoxCarteiraTrabalho;
         private Label labelTelefone;
-        private TextBox textBox1;
+        private TextBox textBoxTelefone;
         private Panel panel1;
         private Label labelCadastro;
         private Label labelFuncionario;

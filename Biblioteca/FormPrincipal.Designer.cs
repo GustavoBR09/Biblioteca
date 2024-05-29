@@ -33,12 +33,16 @@
             toolStripLabel1 = new ToolStripLabel();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            ButtonCadastroLivro = new Button();
+            ButtonCadastroFuncionario = new Button();
+            ButtonCadastroCliente = new Button();
             tabPage5 = new TabPage();
             tabPage2 = new TabPage();
             tabPage3 = new TabPage();
             tabPage4 = new TabPage();
             toolStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
             SuspendLayout();
             // 
             // panelBanner
@@ -84,12 +88,45 @@
             // tabPage1
             // 
             tabPage1.BackColor = Color.LightGray;
+            tabPage1.Controls.Add(ButtonCadastroLivro);
+            tabPage1.Controls.Add(ButtonCadastroFuncionario);
+            tabPage1.Controls.Add(ButtonCadastroCliente);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(906, 417);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Principal";
+            // 
+            // ButtonCadastroLivro
+            // 
+            ButtonCadastroLivro.Location = new Point(6, 102);
+            ButtonCadastroLivro.Name = "ButtonCadastroLivro";
+            ButtonCadastroLivro.Size = new Size(193, 29);
+            ButtonCadastroLivro.TabIndex = 2;
+            ButtonCadastroLivro.Text = "Cadastro de Livros";
+            ButtonCadastroLivro.UseVisualStyleBackColor = true;
+            ButtonCadastroLivro.Click += ButtonCadastroLivro_Click;
+            // 
+            // ButtonCadastroFuncionario
+            // 
+            ButtonCadastroFuncionario.Location = new Point(6, 53);
+            ButtonCadastroFuncionario.Name = "ButtonCadastroFuncionario";
+            ButtonCadastroFuncionario.Size = new Size(193, 29);
+            ButtonCadastroFuncionario.TabIndex = 1;
+            ButtonCadastroFuncionario.Text = "Cadastro de Funcionários";
+            ButtonCadastroFuncionario.UseVisualStyleBackColor = true;
+            ButtonCadastroFuncionario.Click += ButtonCadastroFuncionario_Click;
+            // 
+            // ButtonCadastroCliente
+            // 
+            ButtonCadastroCliente.Location = new Point(6, 6);
+            ButtonCadastroCliente.Name = "ButtonCadastroCliente";
+            ButtonCadastroCliente.Size = new Size(193, 29);
+            ButtonCadastroCliente.TabIndex = 0;
+            ButtonCadastroCliente.Text = "Cadastro de Clientes";
+            ButtonCadastroCliente.UseVisualStyleBackColor = true;
+            ButtonCadastroCliente.Click += ButtonCadastroCliente_Click;
             // 
             // tabPage5
             // 
@@ -145,6 +182,7 @@
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -160,5 +198,8 @@
         private TabPage tabPage5;
         private TabPage tabPage3;
         private TabPage tabPage4;
+        private Button ButtonCadastroLivro;
+        private Button ButtonCadastroFuncionario;
+        private Button ButtonCadastroCliente;
     }
 }
