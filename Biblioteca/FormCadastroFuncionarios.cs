@@ -1,4 +1,5 @@
 ﻿using Biblioteca.Dominio.Entidades;
+using Biblioteca.Infra.Data.Context;
 using Biblioteca.Infra.Data.Repositories;
 using System;
 using System.Collections.Generic;
@@ -14,8 +15,10 @@ namespace Biblioteca
 {
     public partial class FormCadastroFuncionarios : Form
     {
-        public FormCadastroFuncionarios()
+        BibliotecaDBContext context;
+        public FormCadastroFuncionarios(BibliotecaDBContext ctx)
         {
+            context = ctx;
             InitializeComponent();
         }
 
@@ -39,7 +42,7 @@ namespace Biblioteca
             endereco.Estado = comboBoxEstado.Text;
             endereco.Complemento = textBoxComplemento.Text;
 
-            EnderecoRepository repositoryend = new EnderecoRepository();
+            EnderecoRepository repositoryend = new EnderecoRepository(context);
             endereco = repositoryend.Add(endereco);
 
             funcionario.Nome = textBoxNome.Text;
@@ -48,7 +51,7 @@ namespace Biblioteca
             funcionario.Senha = textBoxSenha.Text;
             funcionario.Telefone = textBoxTelefone.Text;
 
-            FuncionarioRepository repository = new FuncionarioRepository;
+            FuncionarioRepository repository = new FuncionarioRepository(context);
             funcionario = repository.Add(funcionario);
 
             MessageBox.Show("Funcionario cadastrado com sucesso.");

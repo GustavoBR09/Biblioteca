@@ -15,11 +15,10 @@ namespace Biblioteca.Infra.Data.Mapping
         {
             builder.ToTable("Endereco");
             builder.Property(c => c.Rua).HasMaxLength(30).IsRequired();
-            builder.Property(c => c.Complemento).IsRequired();
             builder.Property(c => c.Numero).IsRequired();
             builder.Property(c => c.Bairro).HasMaxLength(30).IsRequired();
             builder.Property(c => c.Cidade).HasMaxLength(30).IsRequired();
-            builder.Property(c => c.Estado).HasMaxLength(30).IsRequired();
+            builder.Property(c => c.Estado).HasMaxLength(2).IsRequired();
         }
     }
 }

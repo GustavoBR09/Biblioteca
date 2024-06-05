@@ -9,11 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Biblioteca.Infra.Data.Repositories;
+using Biblioteca.Infra.Data.Context;
 
 namespace Biblioteca
 {
     public partial class FormCadastroLivros : Form
     {
+        BibliotecaDBContext context;
+        public FormCadastroLivros(BibliotecaDBContext ctx)
+        {
+            context = ctx;
+            InitializeComponent();
+        }
         public FormCadastroLivros()
         {
             InitializeComponent();
@@ -38,7 +45,7 @@ namespace Biblioteca
             livro.NumeroPaginas = Convert.ToInt32(numericUpDownNumeroPaginas.Value);
             livro.QuantidadeDisponiveis = Convert.ToInt32(numericUpDownQuantidade.Value);
             //3. Salvar o livro no banco de dados
-            LivroRepository repository = new LivroRepository();
+            LivroRepository repository = new LivroRepository(context);
             repository.Add(livro);
             //4. Exibir mensagem que salvou
             MessageBox.Show("Livro cadastrado com sucesso.");

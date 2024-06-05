@@ -1,4 +1,5 @@
 ﻿using Biblioteca.Dominio.Entidades;
+using Biblioteca.Infra.Data.Context;
 using Biblioteca.Infra.Data.Repositories;
 using System;
 using System.Collections.Generic;
@@ -14,8 +15,10 @@ namespace Biblioteca
 {
     public partial class FormCadastroClientes : Form
     {
-        public FormCadastroClientes()
+        BibliotecaDBContext context;
+        public FormCadastroClientes(BibliotecaDBContext ctx)
         {
+            context = ctx;
             InitializeComponent();
         }
 
@@ -42,7 +45,7 @@ namespace Biblioteca
             endereco.Cidade = textBoxCidade.Text;
             endereco.Estado = comboBoxEstado.Text;
 
-            EnderecoRepository repositoryend = new EnderecoRepository();
+            EnderecoRepository repositoryend = new EnderecoRepository(context);
             endereco = repositoryend.Add(endereco);
 
             cliente.Nome = textBoxNome.Text;
@@ -51,7 +54,7 @@ namespace Biblioteca
             cliente.CPF = maskedTextBoxCPF.Text;
 
             //3. Salvar o cliente no banco de dados
-            ClienteRepository repository = new ClienteRepository();
+            ClienteRepository repository = new ClienteRepository(context);
             repository.Add(cliente);
             //4. Exibir mensagem que salvou
             MessageBox.Show("Cliente cadastrado com sucesso.");

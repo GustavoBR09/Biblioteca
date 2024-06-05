@@ -179,6 +179,8 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "FormPrincipal";
             Text = "FormPrincipal";
+            FormClosing += FormPrincipal_FormClosing;
+            Load += FormPrincipal_Load;
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             tabControl1.ResumeLayout(false);

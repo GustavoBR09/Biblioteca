@@ -21,6 +21,7 @@ namespace Biblioteca.Infra.Data.Mapping
             builder.Property(c => c.CarteiraTrabalho).HasMaxLength(14).IsRequired();
             builder.Property(c => c.NomeUsuario).HasMaxLength(20).IsRequired();
             builder.Property(c => c.Senha).HasMaxLength(20).IsRequired();
+            builder.Property(c => c.Telefone).HasMaxLength(17);
         }
     }
 }
