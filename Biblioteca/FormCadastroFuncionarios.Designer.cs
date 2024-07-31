@@ -35,7 +35,6 @@
             textBoxNome = new TextBox();
             textBoxCarteiraTrabalho = new TextBox();
             labelTelefone = new Label();
-            textBoxTelefone = new TextBox();
             panel1 = new Panel();
             buttonCadastrar = new Button();
             button1 = new Button();
@@ -59,6 +58,7 @@
             labelCidade = new Label();
             textBoxBairro = new TextBox();
             labelRua = new Label();
+            textBoxTelefone = new MaskedTextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -126,13 +126,6 @@
             labelTelefone.Size = new Size(130, 20);
             labelTelefone.TabIndex = 17;
             labelTelefone.Text = "Digite o telefone:";
-            // 
-            // textBoxTelefone
-            // 
-            textBoxTelefone.Location = new Point(9, 286);
-            textBoxTelefone.Name = "textBoxTelefone";
-            textBoxTelefone.Size = new Size(235, 27);
-            textBoxTelefone.TabIndex = 16;
             // 
             // panel1
             // 
@@ -359,12 +352,21 @@
             labelRua.TabIndex = 43;
             labelRua.Text = "Rua:";
             // 
+            // textBoxTelefone
+            // 
+            textBoxTelefone.Location = new Point(9, 287);
+            textBoxTelefone.Mask = "(99) 0000-0000";
+            textBoxTelefone.Name = "textBoxTelefone";
+            textBoxTelefone.Size = new Size(235, 27);
+            textBoxTelefone.TabIndex = 50;
+            // 
             // FormCadastroFuncionarios
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Silver;
             ClientSize = new Size(800, 450);
+            Controls.Add(textBoxTelefone);
             Controls.Add(textBoxComplemento);
             Controls.Add(textBoxRua);
             Controls.Add(comboBoxEstado);
@@ -386,7 +388,6 @@
             Controls.Add(labelCadastro);
             Controls.Add(panel1);
             Controls.Add(labelTelefone);
-            Controls.Add(textBoxTelefone);
             Controls.Add(textBoxCarteiraTrabalho);
             Controls.Add(labelCPF);
             Controls.Add(labelEmail);
@@ -410,7 +411,6 @@
         private TextBox textBoxNome;
         private TextBox textBoxCarteiraTrabalho;
         private Label labelTelefone;
-        private TextBox textBoxTelefone;
         private Panel panel1;
         private Label labelCadastro;
         private Label labelFuncionario;
@@ -434,5 +434,6 @@
         private Label labelRua;
         private Button buttonCadastrar;
         private Button button1;
+        private MaskedTextBox textBoxTelefone;
     }
 }

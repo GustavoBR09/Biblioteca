@@ -36,5 +36,16 @@ namespace Biblioteca.Infra.Data.Repositories
             var result = DbSet.LongCount(predicate);
             return result;
         }
+
+        public int ProximoId()
+        {
+            int id = 1;
+            if (Count() > 0)
+            {
+                id += DbSet.Max(x => x.Id);
+            }
+
+            return id;
+        }
     }
 }

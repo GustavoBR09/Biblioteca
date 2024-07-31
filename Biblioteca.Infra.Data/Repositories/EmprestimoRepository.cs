@@ -1,6 +1,7 @@
 ﻿using Biblioteca.Dominio.Entidades;
 using Biblioteca.Infra.Data.Context;
 using Biblioteca.Infra.Data.Interfaces;
+using Biblioteca.Infra.Data.UoW;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,13 +13,16 @@ namespace Biblioteca.Infra.Data.Repositories
 {
     public class EmprestimoRepository : Repository<Emprestimo>, IEmprestimoRepository
     {
+        UnitOfWork UoW;
         public EmprestimoRepository(BibliotecaDBContext context) : base(context)
         {
+            UoW = new UnitOfWork(context);
         }
 
         public Emprestimo Add(Emprestimo emprestimo)
         {
             DbSet.Add(emprestimo);
+            UoW.Commit();
             return emprestimo;
         }
 
@@ -35,12 +39,14 @@ namespace Biblioteca.Infra.Data.Repositories
             if (emprestimo != null)
             {
                 DbSet.Remove(emprestimo);
+                UoW.Commit();
             }
         }
 
         public Emprestimo Editar(Emprestimo emprestimo)
         {
             DbSet.Update(emprestimo);
+            UoW.Commit();
             return emprestimo;
         }
 

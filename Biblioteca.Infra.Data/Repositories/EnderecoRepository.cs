@@ -1,6 +1,7 @@
 ﻿using Biblioteca.Dominio.Entidades;
 using Biblioteca.Infra.Data.Context;
 using Biblioteca.Infra.Data.Interfaces;
+using Biblioteca.Infra.Data.UoW;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,13 +13,18 @@ namespace Biblioteca.Infra.Data.Repositories
 {
     public class EnderecoRepository : Repository<Endereco>, IEnderecoRepository
     {
+        UnitOfWork UoW;
         public EnderecoRepository(BibliotecaDBContext context) : base(context) 
         {
+            UoW = new UnitOfWork(context);
         }
 
         public Endereco Add(Endereco endereco)
         {
+            //endereco.Id = ProximoId();
             DbSet.Add(endereco);
+            UoW.Commit();
+
             return endereco;
         }
 
@@ -36,11 +42,13 @@ namespace Biblioteca.Infra.Data.Repositories
             {
                 DbSet.Remove(endereco);
             }
+            UoW.Commit();
         }
 
         public Endereco Editar(Endereco endereco)
         {
             DbSet.Update(endereco);
+            UoW.Commit();
             return endereco;
         }
 

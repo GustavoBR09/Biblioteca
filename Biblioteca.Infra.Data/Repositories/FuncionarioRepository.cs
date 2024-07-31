@@ -1,6 +1,7 @@
 ﻿using Biblioteca.Dominio.Entidades;
 using Biblioteca.Infra.Data.Context;
 using Biblioteca.Infra.Data.Interfaces;
+using Biblioteca.Infra.Data.UoW;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,13 +13,17 @@ namespace Biblioteca.Infra.Data.Repositories
 {
     public class FuncionarioRepository : Repository<Funcionario>, IFuncionarioRepository
     {
+        UnitOfWork UoW;
+
         public FuncionarioRepository(BibliotecaDBContext context) : base(context)
         {
+            UoW = new UnitOfWork(context);
         }
 
         public Funcionario Add(Funcionario funcionario)
         {
             DbSet.Add(funcionario);
+            UoW.Commit();
             return funcionario;
         }
 
@@ -35,12 +40,14 @@ namespace Biblioteca.Infra.Data.Repositories
             if (funcionario != null)
             {
                 DbSet.Remove(funcionario);
+                UoW.Commit();
             }
         }
 
         public Funcionario Editar(Funcionario funcionario)
         {
             DbSet.Update(funcionario);
+            UoW.Commit();
             return funcionario;
         }
 

@@ -224,6 +224,7 @@
             ForeColor = SystemColors.AppWorkspace;
             Name = "FormCadastroLivros";
             Text = "Cadastro de Livros";
+            Load += FormCadastroLivros_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownQuantidade).EndInit();

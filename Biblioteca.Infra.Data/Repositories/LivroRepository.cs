@@ -1,6 +1,7 @@
 ﻿using Biblioteca.Dominio.Entidades;
 using Biblioteca.Infra.Data.Context;
 using Biblioteca.Infra.Data.Interfaces;
+using Biblioteca.Infra.Data.UoW;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -13,12 +14,16 @@ namespace Biblioteca.Infra.Data.Repositories
 {
     public class LivroRepository : Repository<Livro>, ILivroRepository
     {
-        public LivroRepository(BibliotecaDBContext dbContext) : base(dbContext)
+        UnitOfWork UoW;
+        public LivroRepository(BibliotecaDBContext context) : base(context)
         {
+            UoW = new UnitOfWork(context);
         }
+
         public Livro Add(Livro livro)
         {
             DbSet.Add(livro);
+            UoW.Commit();
             return livro;
         }
 
@@ -36,12 +41,14 @@ namespace Biblioteca.Infra.Data.Repositories
             if (livro != null)
             {
                 DbSet.Remove(livro);
+                UoW.Commit();
             }
         }
 
         public Livro Editar(Livro livro)
         {
             DbSet.Update(livro);
+            UoW.Commit();
             return livro;
         }
 

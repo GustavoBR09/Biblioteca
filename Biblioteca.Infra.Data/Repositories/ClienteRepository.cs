@@ -1,6 +1,7 @@
 ﻿using Biblioteca.Dominio.Entidades;
 using Biblioteca.Infra.Data.Context;
 using Biblioteca.Infra.Data.Interfaces;
+using Biblioteca.Infra.Data.UoW;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,13 +13,16 @@ namespace Biblioteca.Infra.Data.Repositories
 {
     public class ClienteRepository : Repository<Cliente>, IClienteRepository
     {
+        UnitOfWork UoW;
         public ClienteRepository(BibliotecaDBContext context) : base(context)
         {
+            UoW = new UnitOfWork(context);
         }
 
         public Cliente Add(Cliente cliente)
         {
             DbSet.Add(cliente);
+            UoW.Commit();
             return cliente;
         }
 
@@ -36,11 +40,13 @@ namespace Biblioteca.Infra.Data.Repositories
             {
                 DbSet.Remove(livro);
             }
+            UoW.Commit();
         }
 
         public Cliente Editar(Cliente cliente)
         {
             DbSet.Update(cliente);
+            UoW.Commit();
             return cliente;
         }
 

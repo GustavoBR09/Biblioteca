@@ -48,6 +48,7 @@ namespace Biblioteca
             funcionario.Nome = textBoxNome.Text;
             funcionario.Email = textBoxEmail.Text;
             funcionario.CarteiraTrabalho = textBoxCarteiraTrabalho.Text;
+            funcionario.NomeUsuario = textBoxNomeUsuario.Text;
             funcionario.Senha = textBoxSenha.Text;
             funcionario.Telefone = textBoxTelefone.Text;
 
@@ -70,6 +71,7 @@ namespace Biblioteca
             textBoxNome.Clear();
             textBoxEmail.Clear();
             textBoxCarteiraTrabalho.Clear();
+            textBoxNomeUsuario.Clear();
             textBoxSenha.Clear();
             textBoxTelefone.Clear();
         }

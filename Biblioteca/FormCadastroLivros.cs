@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Biblioteca.Infra.Data.Repositories;
 using Biblioteca.Infra.Data.Context;
+using Biblioteca.Dominio.Enums;
 
 namespace Biblioteca
 {
@@ -41,7 +42,7 @@ namespace Biblioteca
             livro.Titulo = textBoxTitulo.Text;
             livro.Autor = textBoxAutor.Text;
             livro.AnoPublicacao = Convert.ToInt32(textBoxAnoPublicacao.Text);
-            //livro.GeneroLiterario = comboBoxGeneroLiterario.Text;
+            livro.GeneroLiterario = (Genero)comboBoxGeneroLiterario.SelectedItem;
             livro.NumeroPaginas = Convert.ToInt32(numericUpDownNumeroPaginas.Value);
             livro.QuantidadeDisponiveis = Convert.ToInt32(numericUpDownQuantidade.Value);
             //3. Salvar o livro no banco de dados
@@ -60,6 +61,11 @@ namespace Biblioteca
             comboBoxGeneroLiterario.SelectedIndex = -1;
             numericUpDownNumeroPaginas.Value = 0;
             numericUpDownQuantidade.Value = 0;
+        }
+
+        private void FormCadastroLivros_Load(object sender, EventArgs e)
+        {
+            comboBoxGeneroLiterario.DataSource = Enum.GetValues(typeof(Genero));
         }
     }
 }

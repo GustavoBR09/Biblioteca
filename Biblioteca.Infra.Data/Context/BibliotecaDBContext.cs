@@ -13,7 +13,11 @@ namespace Biblioteca.Infra.Data.Context
         public DbSet<Funcionario> Funcionarios { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=localhost,1433;Database=bibliotecaDb;User ID=gustavo;Password=gu$t4v0;Persist Security Info=False;Encrypt=False");
+        {
+            optionsBuilder = optionsBuilder.UseSqlServer("Data Source=GUSTAVOB;User ID=gustavo;Password=gu$t4v0;Connect Timeout=30;Encrypt=False;Trust Server Certificate=True;Initial Catalog=bibliotecaDb");
+            base.OnConfiguring(optionsBuilder);
+        }
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

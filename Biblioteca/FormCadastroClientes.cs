@@ -31,12 +31,12 @@ namespace Biblioteca
 
         private void NovoCliente()
         {
+            EnderecoRepository repositoryend = new EnderecoRepository(context);
+
             //1. Criar um novo objeto cliente
             Cliente cliente = new Cliente();
             Endereco endereco = new Endereco();
-            cliente.PessoaEndereco = endereco;
-            cliente.EnderecoID = endereco.Id;
-
+            
             //2. Jogar as informações do formulário no objeto cliente
             endereco.Rua = textBoxRua.Text;
             endereco.Complemento = textBoxComplemento.Text;
@@ -45,8 +45,11 @@ namespace Biblioteca
             endereco.Cidade = textBoxCidade.Text;
             endereco.Estado = comboBoxEstado.Text;
 
-            EnderecoRepository repositoryend = new EnderecoRepository(context);
+            
             endereco = repositoryend.Add(endereco);
+
+            cliente.PessoaEndereco = endereco;
+            cliente.EnderecoID = endereco.Id;
 
             cliente.Nome = textBoxNome.Text;
             cliente.Email = textBoxEmail.Text;
@@ -55,7 +58,7 @@ namespace Biblioteca
 
             //3. Salvar o cliente no banco de dados
             ClienteRepository repository = new ClienteRepository(context);
-            repository.Add(cliente);
+            cliente = repository.Add(cliente);
             //4. Exibir mensagem que salvou
             MessageBox.Show("Cliente cadastrado com sucesso.");
         }

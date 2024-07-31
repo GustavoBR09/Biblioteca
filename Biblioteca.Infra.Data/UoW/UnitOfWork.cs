@@ -1,4 +1,5 @@
 ﻿using Biblioteca.Infra.Data.Context;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,7 @@ namespace Biblioteca.Infra.Data.UoW
 
         public bool Commit()
         {
+            string teste = _context.Database.GetConnectionString();
             return _context.SaveChanges() > 0;
         }
     }
